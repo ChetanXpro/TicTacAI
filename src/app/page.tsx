@@ -86,9 +86,21 @@ export default function Home() {
     });
   };
 
-  const getPositionStyle = (positionName: string) => {
-    console.log("po", positionName);
+  const checkWinner = (player: Players) => {
+    const history = playersHistory[player];
 
+    const hasWon = winningPairs.some((pair) => {
+      return pair.every((p) => history.includes(p));
+    });
+    if (hasWon) {
+      console.log(player, "Won");
+    }
+  };
+  useEffect(() => {
+    checkWinner(Players.USER);
+  }, [playersHistory]);
+
+  const getPositionStyle = (positionName: string) => {
     switch (positionName) {
       case "topLeft":
         return "border-r-2 border-b-2";
