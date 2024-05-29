@@ -1,7 +1,7 @@
 export enum MOVES {
-    EMPTY,
-    X,
-    O,
+    EMPTY = "EMPTY",
+    X = "X",
+    O = "O",
 }
 export enum Players {
     USER = "USER",
