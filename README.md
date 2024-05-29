@@ -1,2 +1,2 @@
 
-# AI Games
+# TicTacAI
